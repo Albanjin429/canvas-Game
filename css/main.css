@@ -1,0 +1,154 @@
+@keyframes music {
+    0%{
+        transform: rotateZ(0deg);
+    }
+    100%{
+        transform: rotateZ(360deg);
+    }
+}
+*{
+    padding: 0px;
+    margin:0px;
+}
+.main{
+    width:1000px;
+    height:650px;
+    margin: auto;
+    background:url('../images/background1.gif') no-repeat;
+    /*background-size: 100% 100%;*/
+    overflow: hidden;
+    position: relative;
+}
+
+.moon-left{
+    width:40%;
+    /*height: 500px;*/
+    float: left;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    padding: 1em;
+    position: relative;
+    border:1px solid transparent;
+}
+.moon-right{
+    width:60%;
+    height: 100%;
+    float: right;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    padding: 1em;
+    border:1px solid transparent;
+    position: relative;
+}
+.moon-left-words{
+    position:relative;
+    padding: 1em;
+    width:60%;
+    left:-200%;
+    opacity:0;
+}
+.moon-left-words>img{
+    /*width:100%;*/
+}
+.moon-left-img{
+    position: relative;
+    width:80%;
+    right:-300%;
+    opacity:0;
+}
+.moon-left-img>img{
+    /*width:100%;*/
+}
+.first-words{
+    margin: 6em 0 0 7em;
+    position: relative;
+    width: 300px;
+}
+.qing{
+    position: relative;
+    right:-150%;
+}
+.first-words>div:nth-child(2){
+    position: absolute;
+    bottom: 0px;
+    right:-150%;
+
+}
+.second-words{
+    margin-left: 7em;
+}
+.second-words>div{
+    margin-top: 1em;
+    position: relative;
+}
+.second-words>div:nth-of-type(odd){
+    right:-180%;
+}
+.second-words>div:nth-of-type(even){
+    left:-180%;
+}
+.ji{
+    position: absolute;
+    /*right: 167px;*/
+    right:-200%;
+    top: 251px;
+}
+.xiang{
+    position: absolute;
+    right: -120%;
+    top: 239px;
+}
+.blessing{
+    margin-left: 7em;
+    margin-top: 5em;
+    position: relative;
+}
+.first{
+    position: relative;
+    font-size: 24px;
+    color: #FAC91F;
+    font-weight: 700;
+    word-spacing: 0.5em;
+    /*left:-150%;*/
+}
+.second1,.second2{
+    margin-top: 0.5em;
+    margin-left: 3em;
+    font-size: 24px;
+    color: #FAC91F;
+    font-weight: 700;
+    word-spacing: 0.5em;
+    /*opacity: 0*/
+}
+.last{
+    width:70%;
+    text-align:right;
+    /*text-align:center;*/
+   font-size: 20px;
+    color:#FAC91F;
+    font-weight: 700;
+    word-spacing:0.5em;
+    opacity: 0;
+}
+.music-icon{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top:3em;
+    right: 3em ;
+}
+.music-icon>img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+
+
+}
+.music-icon{
+    transform:rotateZ(0deg);
+    cursor: pointer;
+}

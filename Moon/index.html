@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<title>fullPage.js — 基本演示_dowebok</title>
+	<link rel="stylesheet" href="css/jquery.fullPage.css">
+	<style>
+		.section { text-align: center; font: 50px "Microsoft Yahei"; color: #fff;}
+		.section1,.section2,.section3,.section4{
+			background:url("images/1.jpg");
+		}
+		.section2{
+			background:url("images/2.jpg");
+		}
+		.section3{
+			background:url("images/3.jpg");
+		}
+		.section4{
+			 background:url("images/4.jpg");
+		 }
+		.section5{
+			background-color: #ddd;
+		}
+		.baidumap{
+			width:100%;
+			height:100%;
+		}
+
+	</style>
+	<script src="js/jquery-1.8.3.min.js"></script>
+	<script src="js/jquery.fullPage.min.js"></script>
+	<script>
+		$(function(){
+			$('#dowebok').fullpage({
+//				sectionsColor: ['url("images/1.jpg")', 'url("images/2.jpg")', 'url("images/3.jpg")', 'url("images/4.jpg")']
+				navigation:true,
+				navigationColor:"#ddd",
+				loopBottom:true,
+				loopHorizontal:true
+			});
+		});
+	</script>
+</head>
+
+<body>
+
+<div id="dowebok">
+	<div class="section section1">
+
+	</div>
+	<div class="section section2">
+
+	</div>
+	<div class="section section3">
+
+	</div>
+	<div class="section section4">
+
+	</div>
+	<div class="section section5">
+		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=Fj2LVjXo7ee6ytAOY8KNEt4voPtkQjeA"></script>
+        <div class="baidumap" id="allmap"></div>
+		<script>
+			var map = new BMap.Map("allmap");
+			map.centerAndZoom(new BMap.Point(119.972668,31.814091), 14);
+			var bs = map.getBounds();   //获取可视区域
+			var bssw = bs.getSouthWest();   //可视区域左下角
+			var bsne = bs.getNorthEast();   //可视区域右上角
+			var point=new BMap.Point(119.972668,31.814091);
+			var marker = new BMap.Marker(point);  // 创建标注
+			map.addOverlay(marker);               // 将标注添加到地图中
+			marker.setAnimation(BMAP_ANIMATION_BOUNCE);
+			var top_left_control = new BMap.ScaleControl({anchor: BMAP_ANCHOR_TOP_LEFT});// 左上角，添加比例尺
+			var top_left_navigation = new BMap.NavigationControl();  //左上角，添加默认缩放平移控件
+			map.addControl(top_left_control);
+			map.addControl(top_left_navigation);
+			var label = new BMap.Label("常工院",{offset:new BMap.Size(20,-10)});
+			marker.setLabel(label);
+		</script>
+	</div>
+</div>
+</body>
+</html>
